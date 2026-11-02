@@ -42,7 +42,31 @@
   </head>
   <body class="bg-[#FFFFFF] text-slate-800 antialiased selection:bg-[#1677FF]/15 selection:text-[#1677FF]">
     <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
+    <script>
+      window.__loadStaticBundle = function() {
+        if (!document.getElementById('ups-app-bundle')) {
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = './assets/app.css';
+          document.head.appendChild(link);
+
+          var s = document.createElement('script');
+          s.id = 'ups-app-bundle';
+          s.type = 'module';
+          s.src = './assets/app.js';
+          document.body.appendChild(s);
+        }
+      };
+    </script>
+    <script type="module" src="/src/main.tsx" onerror="window.__loadStaticBundle()"></script>
+    <script>
+      setTimeout(function() {
+        var root = document.getElementById('root');
+        if (root && (!root.children || root.children.length === 0)) {
+          window.__loadStaticBundle();
+        }
+      }, 1500);
+    </script>
   </body>
 </html>
 
