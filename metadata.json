@@ -1,0 +1,6 @@
+{
+  "name": "UPS PRO - Giải Pháp Bộ Lưu Điện Chuyên Nghiệp",
+  "description": "Nền tảng thương mại điện tử và phân phối giải pháp bộ lưu điện UPS đa thương hiệu chính hãng: APC, Eaton, Vertiv, Santak, Delta cho văn phòng, Data Center và công nghiệp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
